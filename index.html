@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            gridTemplateRows: {
+              // Simple 8 row grid
+              7: "repeat(7, minmax(0, 1fr))",
+
+              // Complex site-specific row configuration
+              layout: "200px minmax(900px, 1fr) 100px",
+            },
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Calculator</title>
+  </head>
+  <body class="bg-sky-200"
+  >
+    <main>
+      <section class="w-3/4 mx-auto">
+        <div class="flex justify-center items-center">
+          <div class="grid grid-cols-4 grid-rows-7 gap-x-4 gap-y-2 p-4 bg-black rounded-3xl">
+            <div class="col-span-4 row-span-2">
+              <div id="total" class="bg-stone-800 p-4 text-4xl h-1/2	 text-right text-white"></div>
+              <div id="input-value" class="bg-stone-800 p-4 text-2xl h-1/2	 text-right text-white"></div>
+            </div>
+            <div id="all-clear"
+              class="bg-slate-400 rounded-3xl p-6 text-3xl text-slate-300 flex justify-center items-center shadow-lg hover:shadow-pink-500/70 ring-2 hover:ring-orange-500"
+            >
+              AC
+            </div>
+            <div id="delete"
+              class="bg-slate-400 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-pink-500/70 ring-2 hover:ring-orange-500"
+            >
+            <i class="fa-solid fa-delete-left"></i>
+            </div>
+            <div id="modulo"
+              class="bg-sky-800 rounded-3xl  p-6 text-2xl text-slate-300 flex justify-center items-center shadow-lg hover:shadow-red-500/70"
+            >
+              %
+            </div>
+            <div id="value-divison"
+              class="bg-sky-800 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-red-500/70"
+            >
+              /
+            </div>
+            <div id="value1"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              1
+            </div>
+            <div id="value2"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              2
+            </div>
+            <div id="value3"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              3
+            </div>
+            <div id="value-multiple"
+              class="bg-sky-800 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-red-500/70"
+            >
+              *
+            </div>
+            <div id="value4"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              4
+            </div>
+            <div id="value5"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              5
+            </div>
+            <div id="value6"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              6
+            </div>
+            <div id="value-sum"
+              class="bg-sky-800 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-red-500/70"
+            >
+              +
+            </div>
+            <div id="value7"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              7
+            </div>
+            <div id="value8"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              8
+            </div>
+            <div id="value9"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              9
+            </div>
+            <div id="value-substrat"
+              class="bg-sky-800 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-red-500/70"
+            >
+              -
+            </div>
+            <div id="value-dot"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              .
+            </div>
+            <div id="value0"
+              class="bg-gray-700 rounded-3xl text-cyan-300 flex justify-center items-center p-6 text-2xl shadow-lg hover:shadow-cyan-500/70"
+            >
+              0
+            </div>
+            <div id="equal"
+              class="bg-sky-600	rounded-3xl col-span-2 p-6 text-2xl text-white flex justify-center items-center shadow-lg hover:shadow-red-500/70"
+            >
+              =
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+<footer>
+  <p class="text-center"><small>©2022. Simple Calculator.All rights reserved by Rahad.</small></p>
+</footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
